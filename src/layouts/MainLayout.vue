@@ -29,16 +29,16 @@ import EssentialLink from "components/EssentialLink.vue";
 
 const linksList = [
   {
-    title: "Lampa Exempel",
+    title: "Lampa Skriver",
     caption: "",
-    icon: "school",
+    icon: "",
     link: "/",
   },
   {
-    title: "Formulär Exempel",
+    title: "Lampa Läser",
     caption: "",
-    icon: "code",
-    link: "/form-example",
+    icon: "",
+    link: "/light",
   },
 ];
 

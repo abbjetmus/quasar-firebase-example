@@ -2,7 +2,7 @@
   <q-page>
     <div class="row justify-center">
       <div class="col-5">
-        <h3 class="text-center">Lampa exempel</h3>
+        <h3 class="text-center">Lampa skriver värde</h3>
         <div class="text-center">
           <img
             height="500"
