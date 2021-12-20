@@ -5,7 +5,9 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '/', component: () => import('pages/Index.vue') },
-      { path: '/light', component: () => import('src/pages/LightReadExamplePage.vue') }
+      { path: '/light', component: () => import('src/pages/LightReadExamplePage.vue') },
+      { path: '/qr-code', component: () => import('src/pages/QRCodePage.vue') }
+
     ]
   },
 

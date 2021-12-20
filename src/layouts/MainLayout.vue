@@ -4,15 +4,13 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-toolbar-title> Lamp appen </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <q-item-label header> Länkar </q-item-label>
 
         <EssentialLink v-for="link in essentialLinks" :key="link.title" v-bind="link" />
       </q-list>
@@ -40,6 +38,12 @@ const linksList = [
     icon: "",
     link: "/light",
   },
+  {
+    title: "QR-Code",
+    caption: "",
+    icon: "",
+    link: "/qr-code",
+  },
 ];
 
 export default {
@@ -57,7 +61,7 @@ export default {
   },
   methods: {
     toggleLeftDrawer() {
-      leftDrawerOpen.value = !leftDrawerOpen.value;
+      this.leftDrawerOpen = !this.leftDrawerOpen;
     },
   },
 };
