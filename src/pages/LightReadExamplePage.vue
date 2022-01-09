@@ -1,7 +1,7 @@
 <template>
   <q-page>
-    <div class="row justify-center">
-      <div class="col-5">
+    <div class="row justify-center q-mx-sm">
+      <div class="col-xs-12 col-sm-8 col-md-6">
         <h3 class="text-center">Lampa läser värde</h3>
         <div class="text-center">
           <img

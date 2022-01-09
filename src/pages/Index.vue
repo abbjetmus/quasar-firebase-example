@@ -1,7 +1,7 @@
 <template>
   <q-page>
-    <div class="row justify-center">
-      <div class="col-5">
+    <div class="row justify-center q-mx-sm">
+      <div class="col-xs-12 col-sm-8 col-md-6">
         <h3 class="text-center">Lampa skriver värde</h3>
         <div class="text-center">
           <img
@@ -12,7 +12,7 @@
           />
         </div>
         <div class="row justify-center align-center">
-          <div class="col-1 q-mr-xs self-center">
+          <div class="col-auto q-mr-xs self-center">
             <q-icon color="deep-orange" size="lg" name="brightness_medium" />
             0
           </div>
@@ -26,7 +26,7 @@
               color="deep-orange"
             />
           </div>
-          <div class="col-1 self-center q-ml-sm">100</div>
+          <div class="col-auto self-center q-ml-sm">100</div>
         </div>
       </div>
     </div>
@@ -35,9 +35,24 @@
 
 <script>
 import { db } from "../boot/firebase";
-import { ref, set } from "firebase/database";
+import { ref, set, get, child } from "firebase/database";
+
+const bulbRef = ref(db, "bulb");
+
 export default {
-  created() {},
+  created() {
+    get(bulbRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          this.lightValue = snapshot.val();
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  },
   data() {
     return {
       lightValue: 0,
@@ -45,7 +60,7 @@ export default {
   },
   watch: {
     lightValue: function (val) {
-      set(ref(db, "bulb"), val);
+      set(bulbRef, val);
     },
   },
 };
