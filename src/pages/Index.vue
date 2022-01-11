@@ -35,7 +35,7 @@
 
 <script>
 import { db } from "../boot/firebase";
-import { ref, set, get, child } from "firebase/database";
+import { ref, set, get } from "firebase/database";
 
 const bulbRef = ref(db, "bulb");
 
